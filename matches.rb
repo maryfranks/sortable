@@ -1,5 +1,12 @@
-# make json objects into arrays of ruby hashes
+require 'jsonl'
 
+# make json objects into arrays of ruby hashes
+listings_file = File.read('data/listings.txt')
+listings = JSONL.parse(listings_file)
+products_file = File.read('data/products.txt')
+products = JSONL.parse(products_file)
+puts "listings: #{listings.count}"
+puts "products: #{products.count}"
 # set up results array
 
 # find matches and add them to results array
