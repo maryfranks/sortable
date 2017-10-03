@@ -44,6 +44,9 @@ products.each do | product |
 end
 puts results[0]
 
+if File.exist?('results/matches.txt')
+  File.delete('results/matches.txt')
+end
 # convert results to json and write to file
 File.open('results/matches.txt', 'a+') do |f|
   while results.count > 0
