@@ -45,3 +45,10 @@ end
 puts results[0]
 
 # convert results to json and write to file
+File.open('results/matches.txt', 'a+') do |f|
+  while results.count > 0
+    line = results.pop
+    f.write(line.to_json)
+    f.write("\n")
+  end
+end
